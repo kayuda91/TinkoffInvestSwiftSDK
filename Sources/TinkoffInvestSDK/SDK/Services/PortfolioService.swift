@@ -18,6 +18,8 @@ public protocol PortfolioService: AnyObject {
     func getWithdrawLimits(accountID: String) -> AnyPublisher<WithdrawLimitsResponse, RPCError>
 
     func getOperations(request: OperationsRequest) -> AnyPublisher<OperationsResponse, RPCError>
+    
+    func getOperations(request: GetOperationsByCursorRequest) -> AnyPublisher<GetOperationsByCursorResponse, RPCError>
 }
 
 final class GRPCPortfolioService: BaseCombineGRPCService, PortfolioService {
