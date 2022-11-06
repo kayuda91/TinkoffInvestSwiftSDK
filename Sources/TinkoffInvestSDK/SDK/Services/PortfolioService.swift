@@ -19,7 +19,7 @@ public protocol PortfolioService: AnyObject {
 
     func getOperations(request: OperationsRequest) -> AnyPublisher<OperationsResponse, RPCError>
     
-    func getOperations(request: GetOperationsByCursorRequest) -> AnyPublisher<GetOperationsByCursorResponse, RPCError>
+    func getOperationsByCursor(request: GetOperationsByCursorRequest) -> AnyPublisher<GetOperationsByCursorResponse, RPCError>
 }
 
 final class GRPCPortfolioService: BaseCombineGRPCService, PortfolioService {
