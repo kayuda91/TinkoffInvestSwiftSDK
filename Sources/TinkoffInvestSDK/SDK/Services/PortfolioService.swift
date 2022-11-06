@@ -49,4 +49,8 @@ final class GRPCPortfolioService: BaseCombineGRPCService, PortfolioService {
     func getOperations(request: OperationsRequest) -> AnyPublisher<OperationsResponse, RPCError> {
         return executor.call(client.getOperations)(request)
     }
+    
+    func getOperationsByCursor(request: GetOperationsByCursorRequest) -> AnyPublisher<GetOperationsByCursorResponse, RPCError> {
+        return executor.call(client.getOperationsByCursor)(request)
+    }
 }
